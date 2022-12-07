@@ -1,0 +1,7 @@
+*
+!*/
+
+# Track gitignore
+!.gitignore
+# Track Python files
+!src/
