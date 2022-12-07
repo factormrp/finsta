@@ -4,4 +4,5 @@
 # Track gitignore
 !.gitignore
 # Track Python files
-!src/
+!src/*
+!src/*/*
