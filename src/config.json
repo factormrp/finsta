@@ -1,0 +1,7 @@
+{
+    "FLASK_ENV": "production",
+    "DEBUG": false,
+    "TESTING": false,
+    "URL_SCHEME": "http",
+    "SQLALCHEMY_DATABASE_URI": "sqlite:///database.db"
+}
