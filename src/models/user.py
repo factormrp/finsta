@@ -1,8 +1,12 @@
-# Finsta imports
-from .base_model import BaseModel
-from ..database import db
+from sqlalchemy.types import Integer, String
+from models.base_model import BaseModel
+from sqlalchemy import Column
+
 
 class User(BaseModel):
-    user_id = db.Column(db.Integer, primary_key=True)
-    followers = db.Column(db.Integer, nullable=False)
-    following = db.Column(db.Integer, nullable=False)
+    __tablename__ = 'User'
+    
+    name = Column(String, nullable=False)
+    followers = Column(Integer, nullable=False)
+    following = Column(Integer, nullable=False)
+    posts = Column(Integer, nullable=False)

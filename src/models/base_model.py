@@ -1,16 +1,21 @@
-# System imports
+# system imports
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.types import Integer, Boolean, DateTime
+from sqlalchemy.sql.functions import current_timestamp
+from sqlalchemy import Column
 from typing import Any, Dict
 import pprint
-# Finsta imports
-from ..database import db
 
-class BaseModel(db.Model):
+# instantiate base
+Base = declarative_base()
+
+class BaseModel(Base):
     __abstract__ = True
 
-    id = db.Column(db.Integer, primary_key=True)
-    deleted = db.Column(db.Boolean, default=False, nullable=False)
-    created_date = db.Column(
-        db.Datetime, default=db.func.current_timestamp(), nullable=False
+    id = Column(Integer, primary_key=True)
+    deleted = Column(Boolean, default=False, nullable=False)
+    created_date = Column(
+        DateTime, default=current_timestamp(), nullable=False
     )
 
     @classmethod
